@@ -27,13 +27,15 @@ def getState(data, t, n):
 	res = []
 	for i in range(n - 1):
 		block_dif = block[i + 1] - block[i]
-		block_dif = (block_dif - np.mean(block_dif))/np.var(block_dif) * 200 # 10 #(10**(np.max([1,len(str(int(reward)))-2])))
-		#print(block_dif)
+		#block_dif = (block[i+1] - np.nanmean(block))/np.var(block) #* 100 # 10 #(10**(np.max([1,len(str(int(reward)))-2])))
+		block_dif = block_dif / 100
+		#if i <= 10: print('Blockdif:' + str(block_dif) )
 		if block_dif < -100:
 			res.append(0.0)
 		elif block_dif > 100:
 			res.append(1.0)
 		else:
 			res.append(sigmoid(block_dif  ))
-
+	
+	#print(res[:10])
 	return np.array([res])
