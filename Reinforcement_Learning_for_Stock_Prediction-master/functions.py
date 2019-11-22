@@ -28,7 +28,9 @@ def getState(data, t, n):
 	for i in range(n - 1):
 		block_dif = block[i + 1] - block[i]
 		#block_dif = (block[i+1] - np.nanmean(block))/np.var(block) #* 100 # 10 #(10**(np.max([1,len(str(int(reward)))-2])))
-		block_dif = block_dif / 100
+		block_dif = block_dif / 30 
+		
+		#block_dif = block_dif / 50 
 		#if i <= 10: print('Blockdif:' + str(block_dif) )
 		if block_dif < -100:
 			res.append(0.0)
@@ -37,5 +39,7 @@ def getState(data, t, n):
 		else:
 			res.append(sigmoid(block_dif  ))
 	
-	#print(res[:10])
+	#print('Min:' + str(np.min(res)))
+	#print('Mean: ' + str(np.mean(res)))
+	#print('Max: ' + str(np.max(res)))
 	return np.array([res])
