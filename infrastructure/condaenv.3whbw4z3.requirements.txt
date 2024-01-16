@@ -1,0 +1,14 @@
+black==23.12.1
+dateparser==1.1.7
+flake8==4.0.1
+quandl==3.6.1
+matplotlib==3.8.2
+numpy==1.24.1
+pandas==1.5.3
+pytest==6.2.5
+pytest-cov==3.0.0
+plotly==5.3.1
+PyPDF2==3.0.1
+regex==2022.10.31
+setuptools==69.0.3
+typing_extensions==4.9.0
