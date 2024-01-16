@@ -8,8 +8,10 @@ dependencies:
       - black==23.12.1
       - dateparser==1.1.7
       - flake8==4.0.1
+      - ipython==6.19.2
       - quandl==3.6.1
       - matplotlib==3.8.2
+      - nbformat==5.1.2
       - numpy==1.24.1
       - pandas==1.5.3
       - pytest==6.2.5
